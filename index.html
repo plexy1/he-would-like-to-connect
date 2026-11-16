@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>(1) new connection</title>
+<link rel="icon" href="face.jpg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- displacement filter used by the "melt" face variant -->
+<svg width="0" height="0" aria-hidden="true" style="position:absolute">
+  <filter id="melt" x="-20%" y="-20%" width="140%" height="140%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.012 0.05" numOctaves="2" seed="7"/>
+    <feDisplacementMap in="SourceGraphic" scale="46" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</svg>
+
+<div id="gate" data-nohit>
+  <div class="gate-inner">
+    <p class="kicker">Warning</p>
+    <h2 id="gateTitle">This page flashes and screams.</h2>
+    <p class="gate-note" id="gateNote"></p>
+    <p class="gate-copy">Rapid flashing images and sudden loud sound. Do not continue if you have
+      photosensitive epilepsy or a heart condition. Turn your volume down first.</p>
+    <button id="enter" type="button">I understand. Let him in.</button>
+    <p class="gate-keys"><kbd>M</kbd> mute &nbsp;·&nbsp; <kbd>Esc</kbd> make it stop</p>
+  </div>
+</div>
+
+<main id="stage">
+  <div class="wall" aria-hidden="true"></div>
+  <div class="frame" aria-hidden="true"></div>
+
+  <header class="mast">
+    <span class="brand">The Connector</span>
+    <span class="meta"><span id="clock">--:--:--</span>
+      <button id="mute" type="button" data-nohit>sound on</button></span>
+  </header>
+
+  <section class="copy">
+    <p class="kicker" id="kicker">1 new connection request</p>
+    <h1 id="headline">He would like to connect.</h1>
+    <p class="sub" id="sub">Click anywhere to accept.</p>
+  </section>
+
+  <footer class="foot">
+    <ol id="log" aria-live="off"></ol>
+    <div class="count"><b id="friends">0</b><span>mutual friends</span></div>
+  </footer>
+
+  <div id="idle" aria-hidden="true"></div>
+</main>
+
+<div id="faces" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<div id="black" aria-hidden="true"><div id="dark"></div></div>
+<div id="rush" aria-hidden="true"><i></i></div>
+<div id="flash" aria-hidden="true"></div>
+<div id="final" aria-hidden="true"><div class="final-face"></div><p>You are now connected.</p><small id="finalNote"></small></div>
+<div id="cursor" aria-hidden="true"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
